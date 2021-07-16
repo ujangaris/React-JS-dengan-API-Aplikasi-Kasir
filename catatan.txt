@@ -2,3 +2,8 @@
 2. install package react-bootstrap
     - pasang configurasi pada index.js
         import 'bootstrap/dist/css/bootstrap.min.css';
+3. install package sweet-alert
+4. install package axios
+4. install json placeholder
+    
+
