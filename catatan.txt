@@ -1,0 +1,4 @@
+1. install  react js
+2. install package react-bootstrap
+    - pasang configurasi pada index.js
+        import 'bootstrap/dist/css/bootstrap.min.css';
