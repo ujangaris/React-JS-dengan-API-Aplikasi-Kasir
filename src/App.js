@@ -1,6 +1,4 @@
-import NavbarComponent from "./components/NavbarComponent";
-import ListCategories from "./components/ListCategories";
-import Hasil from "./components/Hasil";
+import {Hasil, ListCategories,NavbarComponent} from "./components";
 import { Row, Col,Container } from "react-bootstrap";
 
 function App() {
