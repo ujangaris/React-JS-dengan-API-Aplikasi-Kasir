@@ -5,5 +5,7 @@
 3. install package sweet-alert
 4. install package axios
 4. install json placeholder
+    json-server --watch db.json --port=3004
+    
     
 

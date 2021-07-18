@@ -4,15 +4,12 @@ import {
   Navbar,
   NavDropdown,
   Container,
-  Form,
-  Button,
-  FormControl,
 } from "react-bootstrap";
 const NavbarComponent = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar  variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">Kasir App</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -30,15 +27,6 @@ const NavbarComponent = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Form className="d-flex">
-            <FormControl
-              type="search"
-              placeholder="Search"
-              className="mr-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>
