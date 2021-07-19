@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Hasil, ListCategories, NavbarComponent } from "./components";
+import { Hasil, ListCategories, NavbarComponent, Menus } from "./components";
 import { Row, Col, Container } from "react-bootstrap";
 import { API_URL } from "./utils/constants";
 import axios from "axios";
@@ -17,7 +17,7 @@ export default class App extends Component {
     axios
       .get(API_URL + "products")
       .then((res) => {
-        console.log("Response : ", res);
+        // console.log("Response : ", res);
         const menus = res.data;
         this.setState({ menus });
       })
@@ -43,7 +43,10 @@ export default class App extends Component {
                 <hr />
                 <Row>
                   {menus && menus.map((menu) => (
-                    <h2>{menu.nama}</h2>
+                    <Menus 
+                    key={menu.id}
+                    menu={menu}
+                    />
                   ))}
                 </Row>
               </Col>
