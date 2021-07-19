@@ -15,7 +15,7 @@ export default class App extends Component {
 
   componentDidMount() {
     axios
-      .get(API_URL + "product")
+      .get(API_URL + "products")
       .then((res) => {
         console.log("Response : ", res);
         const menus = res.data;
@@ -27,7 +27,8 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.state.menus);
+    // console.log(this.state.menus);
+    const {menus} = this.state
     return (
       <div className="App">
         <NavbarComponent />
@@ -40,6 +41,11 @@ export default class App extends Component {
                   <strong>Daftar Produk</strong>
                 </h4>
                 <hr />
+                <Row>
+                  {menus && menus.map((menu) => (
+                    <h2>{menu.nama}</h2>
+                  ))}
+                </Row>
               </Col>
               <Hasil />
             </Row>
