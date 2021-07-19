@@ -1,7 +1,7 @@
 // rafce
 import React from "react";
 import { Col,Card } from "react-bootstrap";
-
+import {numberWithCommas} from '../utils/utils';
 const Menus = ({ menu }) => {
   return (
     <Col md={4} xs={6} className="mt-4">
@@ -10,7 +10,7 @@ const Menus = ({ menu }) => {
         <Card.Body>
           <Card.Title>{menu.nama}</Card.Title>
           <Card.Text>
-            Rp. {menu.harga}
+            Rp. {numberWithCommas(menu.harga)}
           </Card.Text>
         </Card.Body>
       </Card>

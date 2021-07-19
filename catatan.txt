@@ -9,5 +9,6 @@
     
 5. menggunakan axios
     - https://www.digitalocean.com/community/tutorials/react-axios-react-id
-    
+6. format number 
+    -https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
 
