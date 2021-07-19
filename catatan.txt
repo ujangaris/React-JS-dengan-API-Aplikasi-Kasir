@@ -7,5 +7,7 @@
 4. install json placeholder
     json-server --watch db.json --port=3004
     
+5. menggunakan axios
+    - https://www.digitalocean.com/community/tutorials/react-axios-react-id
     
 
