@@ -13,8 +13,7 @@ import {
 const Icon = ({ nama }) => {
   if (nama === "Makanan")
     return <FontAwesomeIcon icon={faUtensils} className="mr-2" />;
-  if (nama === "Minuman")
-    return <FontAwesomeIcon icon={faCoffee}  />;
+  if (nama === "Minuman") return <FontAwesomeIcon icon={faCoffee} />;
   if (nama === "Cemilan")
     return <FontAwesomeIcon icon={faCheese} className="mr-2" />;
 
@@ -46,6 +45,7 @@ export default class ListCategories extends Component {
   render() {
     // console.log("Catgeories ", this.state.categories);
     const { categories } = this.state;
+    const { changeCategory, categoriYangDipilih } = this.props;
     return (
       <Col md={2} mt="2">
         <h4>
@@ -56,9 +56,12 @@ export default class ListCategories extends Component {
         <ListGroup>
           {categories &&
             categories.map((category) => (
-              <ListGroup.Item key={category.id}>
+              <ListGroup.Item
+                key={category.id}
+                onClick={() => changeCategory(category.nama)}
+              >
                 <h5>
-                   <Icon nama={category.nama }/> {category.nama}
+                  <Icon nama={category.nama} /> {category.nama}
                 </h5>
               </ListGroup.Item>
             ))}
