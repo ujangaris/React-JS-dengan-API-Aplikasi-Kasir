@@ -12,3 +12,8 @@
 6. format number 
     -https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
 
+7. font awesome react 
+   - https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react
+      npm i --save @fortawesome/fontawesome-svg-core
+      npm install --save @fortawesome/free-solid-svg-icons
+      npm install --save @fortawesome/react-fontawesome
