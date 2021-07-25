@@ -13,6 +13,7 @@ export default class App extends Component {
     this.state = {
       menus: [],
       categoriYangDipilih: "Makanan",
+      keranjangs: [],
     };
   }
 
@@ -46,16 +47,24 @@ export default class App extends Component {
         console.log("Error ya: ", error);
       });
   };
+
+  masukKeranjang = (value) => {
+    console.log("Menu : ", value);
+  };
+
   render() {
     // console.log(this.state.menus);
-    const { menus,categoriYangDipilih } = this.state;
+    const { menus, categoriYangDipilih } = this.state;
     return (
       <div className="App">
         <NavbarComponent />
         <div className="mt-3">
           <Container fluid>
             <Row>
-              <ListCategories changeCategory={this.changeCategory}  categoriYangDipilih={categoriYangDipilih} />
+              <ListCategories
+                changeCategory={this.changeCategory}
+                categoriYangDipilih={categoriYangDipilih}
+              />
               <Col>
                 <h4>
                   <strong>Daftar Produk</strong>
@@ -63,7 +72,13 @@ export default class App extends Component {
                 <hr />
                 <Row>
                   {menus &&
-                    menus.map((menu) => <Menus key={menu.id} menu={menu} />)}
+                    menus.map((menu) => (
+                      <Menus
+                        key={menu.id}
+                        menu={menu}
+                        masukKeranjang={this.masukKeranjang}
+                      />
+                    ))}
                 </Row>
               </Col>
               <Hasil />
