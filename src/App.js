@@ -43,6 +43,22 @@ export default class App extends Component {
       });
   }
 
+  componentDidUpdate(prevState) {
+    if (this.state.keranjangs !== prevState.keranjangs) {
+      //menjalakan/memasukan kedalam hasil
+      axios
+        .get(API_URL + "keranjangs")
+        .then((res) => {
+          // console.log("Response : ", res);
+          const keranjangs = res.data;
+          this.setState({ keranjangs });
+        })
+        .catch((error) => {
+          console.log("Error ya: ", error);
+        });
+    }
+  }
+
   changeCategory = (value) => {
     this.setState({
       categoriYangDipilih: value,

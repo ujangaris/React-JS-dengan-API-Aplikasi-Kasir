@@ -1,6 +1,6 @@
 // rcc
 import React, { Component } from "react";
-import { Badge, Col, ListGroup, Row } from "react-bootstrap";
+import { Button, Col, ListGroup, Row } from "react-bootstrap";
 import { numberWithCommas } from "./../utils/utils";
 
 export default class ListCategories extends Component {
@@ -19,9 +19,9 @@ export default class ListCategories extends Component {
                 <Row>
                   <Col xs="2">
                     <h4>
-                      <Badge pill variant="success">
+                      <Button  variant="success">
                           {menuKeranjang.jumlah}
-                      </Badge>
+                      </Button>
                     </h4>
                   </Col>
                   <Col>

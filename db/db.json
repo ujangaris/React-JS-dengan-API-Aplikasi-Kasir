@@ -185,8 +185,8 @@
   ],
   "keranjangs": [
     {
-      "jumlah": 3,
-      "total_harga": 48000,
+      "jumlah": 4,
+      "total_harga": 64000,
       "product": {
         "id": 1,
         "kode": "K-01",
@@ -219,8 +219,8 @@
       "id": 2
     },
     {
-      "jumlah": 1,
-      "total_harga": 5000,
+      "jumlah": 2,
+      "total_harga": 10000,
       "product": {
         "id": 8,
         "kode": "K-08",
@@ -236,8 +236,8 @@
       "id": 3
     },
     {
-      "jumlah": 1,
-      "total_harga": 7000,
+      "jumlah": 2,
+      "total_harga": 14000,
       "product": {
         "id": 12,
         "kode": "K-012",
