@@ -3,7 +3,7 @@ import { Hasil, ListCategories, NavbarComponent, Menus } from "./components";
 import { Row, Col, Container } from "react-bootstrap";
 import { API_URL } from "./utils/constants";
 import axios from "axios";
- import swal from 'sweetalert';
+import swal from "sweetalert";
 
 //rrc
 export default class App extends Component {
@@ -51,21 +51,53 @@ export default class App extends Component {
 
   masukKeranjang = (value) => {
     // console.log("Menu : ", value);
-
-    const  keranjang ={
-      jumlah:1,
-      total_harga:value.harga,
-      product:value
-    }
     axios
-      .post(API_URL + "keranjangs", keranjang)
+      .get(API_URL + "keranjangs?product.id=" + value.id)
       .then((res) => {
-        swal({
-          title: "Sukses Masuk Keranjang!",
-          text: "Sukses Masuk Keranjang "+keranjang.product.nama,
-          icon: "success",
-          button: false,
-        });
+        if (res.data.length === 0) {
+          const keranjang = {
+            jumlah: 1,
+            total_harga: value.harga,
+            product: value,
+          };
+
+          axios
+            .post(API_URL + "keranjangs", keranjang)
+            .then((res) => {
+              swal({
+                title: "Sukses Masuk Keranjang!",
+                text: "Sukses Masuk Keranjang " + keranjang.product.nama,
+                icon: "success",
+                button: false,
+                timer:1500,
+              });
+            })
+            .catch((error) => {
+              console.log("Error ya: ", error);
+            });
+        } else {
+          const keranjang = {
+            jumlah: res.data[0].jumlah + 1,
+            total_harga: res.data[0].total_harga + value.harga,
+            product: value,
+          };
+
+          //jika berhasil
+          axios
+            .put(API_URL + "keranjangs/"+res.data[0].id, keranjang)
+            .then((res) => {
+              swal({
+                title: "Sukses Masuk Keranjang!",
+                text: "Sukses Masuk Keranjang " + keranjang.product.nama,
+                icon: "success",
+                button: false,
+                timer:1500,
+              });
+            })
+            .catch((error) => {
+              console.log("Error ya: ", error);
+            });
+        }
       })
       .catch((error) => {
         console.log("Error ya: ", error);
