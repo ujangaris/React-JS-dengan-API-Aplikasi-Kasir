@@ -29,6 +29,18 @@ export default class App extends Component {
       .catch((error) => {
         console.log("Error ya: ", error);
       });
+
+    //memasukan kedalam hasil
+    axios
+      .get(API_URL + "keranjangs")
+      .then((res) => {
+        // console.log("Response : ", res);
+        const keranjangs = res.data;
+        this.setState({ keranjangs });
+      })
+      .catch((error) => {
+        console.log("Error ya: ", error);
+      });
   }
 
   changeCategory = (value) => {
@@ -69,7 +81,7 @@ export default class App extends Component {
                 text: "Sukses Masuk Keranjang " + keranjang.product.nama,
                 icon: "success",
                 button: false,
-                timer:1500,
+                timer: 1500,
               });
             })
             .catch((error) => {
@@ -84,14 +96,14 @@ export default class App extends Component {
 
           //jika berhasil
           axios
-            .put(API_URL + "keranjangs/"+res.data[0].id, keranjang)
+            .put(API_URL + "keranjangs/" + res.data[0].id, keranjang)
             .then((res) => {
               swal({
                 title: "Sukses Masuk Keranjang!",
                 text: "Sukses Masuk Keranjang " + keranjang.product.nama,
                 icon: "success",
                 button: false,
-                timer:1500,
+                timer: 1500,
               });
             })
             .catch((error) => {
@@ -106,7 +118,7 @@ export default class App extends Component {
 
   render() {
     // console.log(this.state.menus);
-    const { menus, categoriYangDipilih } = this.state;
+    const { menus, categoriYangDipilih, keranjangs } = this.state;
     return (
       <div className="App">
         <NavbarComponent />
@@ -133,7 +145,7 @@ export default class App extends Component {
                     ))}
                 </Row>
               </Col>
-              <Hasil />
+              <Hasil keranjangs={keranjangs} />
             </Row>
           </Container>
         </div>
