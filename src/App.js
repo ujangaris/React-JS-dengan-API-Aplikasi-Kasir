@@ -3,6 +3,7 @@ import { Hasil, ListCategories, NavbarComponent, Menus } from "./components";
 import { Row, Col, Container } from "react-bootstrap";
 import { API_URL } from "./utils/constants";
 import axios from "axios";
+ import swal from 'sweetalert';
 
 //rrc
 export default class App extends Component {
@@ -49,7 +50,26 @@ export default class App extends Component {
   };
 
   masukKeranjang = (value) => {
-    console.log("Menu : ", value);
+    // console.log("Menu : ", value);
+
+    const  keranjang ={
+      jumlah:1,
+      total_harga:value.harga,
+      product:value
+    }
+    axios
+      .post(API_URL + "keranjangs", keranjang)
+      .then((res) => {
+        swal({
+          title: "Sukses Masuk Keranjang!",
+          text: "Sukses Masuk Keranjang "+keranjang.product.nama,
+          icon: "success",
+          button: false,
+        });
+      })
+      .catch((error) => {
+        console.log("Error ya: ", error);
+      });
   };
 
   render() {
