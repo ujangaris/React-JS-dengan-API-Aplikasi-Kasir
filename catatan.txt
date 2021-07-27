@@ -20,3 +20,5 @@
 8. react-router-dom
     - https://reactrouter.com/web/guides/quick-start
         - npm install react-router-dom
+9. mengitung total bayar dengan reduce
+    - https://www.freecodecamp.org/news/javascript-map-reduce-and-filter-explained-with-examples/

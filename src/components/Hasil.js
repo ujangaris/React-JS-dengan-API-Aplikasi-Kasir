@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import { Button, Col, ListGroup, Row } from "react-bootstrap";
 import { numberWithCommas } from "./../utils/utils";
+import TotalBayar from "./TotalBayar";
 
 export default class ListCategories extends Component {
   render() {
@@ -19,21 +20,24 @@ export default class ListCategories extends Component {
                 <Row>
                   <Col xs="2">
                     <h4>
-                      <Button  variant="success">
-                          {menuKeranjang.jumlah}
-                      </Button>
+                      <Button variant="success">{menuKeranjang.jumlah}</Button>
                     </h4>
                   </Col>
                   <Col>
                     <h5>{menuKeranjang.product.nama}</h5>
                     <p>Rp. {numberWithCommas(menuKeranjang.product.harga)}</p>
                   </Col>
-                  <Col><strong className="float-right">Rp. {numberWithCommas(menuKeranjang.total_harga)}</strong></Col>
+                  <Col>
+                    <strong className="float-right">
+                      Rp. {numberWithCommas(menuKeranjang.total_harga)}
+                    </strong>
+                  </Col>
                 </Row>
               </ListGroup.Item>
             ))}
           </ListGroup>
         )}
+        <TotalBayar keranjangs={keranjangs} />
       </Col>
     );
   }
