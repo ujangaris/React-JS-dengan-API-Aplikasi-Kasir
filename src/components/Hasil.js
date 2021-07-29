@@ -1,6 +1,6 @@
 // rcc
 import React, { Component } from "react";
-import { Button, Col, ListGroup, Row } from "react-bootstrap";
+import { Badge, Col, ListGroup, Row } from "react-bootstrap";
 import { numberWithCommas } from "./../utils/utils";
 import TotalBayar from "./TotalBayar";
 
@@ -8,7 +8,7 @@ export default class ListCategories extends Component {
   render() {
     const { keranjangs } = this.props;
     return (
-      <Col md={3} mt="2">
+      <Col md={3} className="mt-3">
         <h4>
           <strong>Hasil</strong>
         </h4>
@@ -18,9 +18,11 @@ export default class ListCategories extends Component {
             {keranjangs.map((menuKeranjang) => (
               <ListGroup.Item>
                 <Row>
-                  <Col xs="2">
+                  <Col xs={2}>
                     <h4>
-                      <Button variant="success">{menuKeranjang.jumlah}</Button>
+                      <Badge pill bg="success">
+                        {menuKeranjang.jumlah}
+                      </Badge>
                     </h4>
                   </Col>
                   <Col>

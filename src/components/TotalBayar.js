@@ -1,6 +1,6 @@
 //rcc
 import React, { Component } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import { numberWithCommas } from "../utils/utils";
 
 export default class TotalBayar extends Component {
@@ -18,6 +18,14 @@ export default class TotalBayar extends Component {
                 Rp. {numberWithCommas(totalBayar)}
               </strong>
             </h4>
+            <div className="d-grid">
+
+            <Button
+              variant="primary"
+              block >
+              <strong>BAYAR</strong>
+            </Button>
+                </div>
           </Col>
         </Row>
       </div>
