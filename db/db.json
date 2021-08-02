@@ -184,7 +184,6 @@
     }
   ],
   "keranjangs": [
-    
     {
       "jumlah": 1,
       "total_harga": 14000,
@@ -238,6 +237,62 @@
     }
   ],
   "pesanans": [
-    
+    {
+      "total_bayar": 38000,
+      "menus": [
+        {
+          "jumlah": 1,
+          "total_harga": 14000,
+          "product": {
+            "id": 2,
+            "kode": "K-02",
+            "nama": "Nasi Goreng Telur",
+            "harga": 14000,
+            "is_ready": true,
+            "gambar": "nasi-goreng-telor.jpg",
+            "category": {
+              "id": 1,
+              "nama": "Makanan"
+            }
+          },
+          "id": 2
+        },
+        {
+          "jumlah": 2,
+          "total_harga": 10000,
+          "product": {
+            "id": 8,
+            "kode": "K-08",
+            "nama": "Pangsit 6 pcs",
+            "harga": 5000,
+            "is_ready": true,
+            "gambar": "pangsit.jpg",
+            "category": {
+              "id": 3,
+              "nama": "Cemilan"
+            }
+          },
+          "id": 3
+        },
+        {
+          "jumlah": 2,
+          "total_harga": 14000,
+          "product": {
+            "id": 12,
+            "kode": "K-012",
+            "nama": "Es Jeruk",
+            "harga": 7000,
+            "is_ready": true,
+            "gambar": "es-jeruk.jpg",
+            "category": {
+              "id": 2,
+              "nama": "Minuman"
+            }
+          },
+          "id": 4
+        }
+      ],
+      "id": 1
+    }
   ]
 }

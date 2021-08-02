@@ -39,7 +39,7 @@ export default class ListCategories extends Component {
             ))}
           </ListGroup>
         )}
-        <TotalBayar keranjangs={keranjangs} />
+        <TotalBayar keranjangs={keranjangs} {...this.props} />
       </Col>
     );
   }
