@@ -16,7 +16,7 @@ export default class ListCategories extends Component {
         {keranjangs.length !== 0 && (
           <ListGroup variant="flush">
             {keranjangs.map((menuKeranjang) => (
-              <ListGroup.Item>
+              <ListGroup.Item key={menuKeranjang.id}>
                 <Row>
                   <Col xs={2}>
                     <h4>
