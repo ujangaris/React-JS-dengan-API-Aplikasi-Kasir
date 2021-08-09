@@ -185,8 +185,8 @@
   ],
   "keranjangs": [
     {
-      "jumlah": 1,
-      "total_harga": 14000,
+      "jumlah": 2,
+      "total_harga": 28000,
       "product": {
         "id": 2,
         "kode": "K-02",
