@@ -22,6 +22,8 @@ export default class ListCategories extends Component {
     this.setState({
       showModal: true,
       keranjangDetail: menuKeranjang,
+      jumlah: menuKeranjang.jumlah,
+      keterangan: menuKeranjang.keterangan,
     });
   };
 
@@ -29,6 +31,31 @@ export default class ListCategories extends Component {
     this.setState({
       showModal: false,
     });
+  };
+
+  tambah = () => {
+    this.setState({
+      jumlah: this.state.jumlah + 1,
+    });
+  };
+
+  kurang = () => {
+    if (this.state.jumlah !== 1) {
+      this.setState({
+        jumlah: this.state.jumlah - 1,
+      });
+    }
+  };
+
+  changeHandler = (event) => {
+    this.setState({
+      keterangan: event.target.value,
+    });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Hai", this.state.keterangan);
   };
 
   render() {
@@ -67,7 +94,14 @@ export default class ListCategories extends Component {
               </ListGroup.Item>
             ))}
 
-            <ModalKeranjang handleClose={this.handleClose} {...this.state} />
+            <ModalKeranjang
+              handleClose={this.handleClose}
+              {...this.state}
+              tambah={this.tambah}
+              kurang={this.kurang}
+              changeHandler={this.changeHandler}
+              handleSubmit={this.handleSubmit}
+            />
           </ListGroup>
         )}
         <TotalBayar keranjangs={keranjangs} {...this.props} />

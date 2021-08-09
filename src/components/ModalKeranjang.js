@@ -11,6 +11,10 @@ const ModalKeranjang = ({
   keranjangDetail,
   jumlah,
   keterangan,
+  tambah,
+  kurang,
+  changeHandler,
+  handleSubmit,
 }) => {
   if (keranjangDetail) {
     return (
@@ -24,7 +28,7 @@ const ModalKeranjang = ({
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Total Harga :</Form.Label>
               <strong>
@@ -35,12 +39,22 @@ const ModalKeranjang = ({
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Jumlah :</Form.Label>
               <br />
-              <Button variant="primary" size="sm" className="mr-2">
-                <FontAwesomeIcon icon={faPlus} />
+              <Button
+                variant="primary"
+                size="sm"
+                className="mr-2"
+                onClick={() => kurang()}
+              >
+                <FontAwesomeIcon icon={faMinus} />
               </Button>{" "}
               <strong>{jumlah}</strong>{" "}
-              <Button variant="primary" size="sm" className="ml-2">
-                <FontAwesomeIcon icon={faMinus} />
+              <Button
+                variant="primary"
+                size="sm"
+                className="ml-2"
+                onClick={() => tambah()}
+              >
+                <FontAwesomeIcon icon={faPlus} />
               </Button>
             </Form.Group>
 
@@ -55,6 +69,7 @@ const ModalKeranjang = ({
                 name="keterangan"
                 placeholder="Contoh : Pedas, Nasi 1/2"
                 value={keterangan}
+                onChange={(event) => changeHandler(event)}
               />
             </Form.Group>
             <Button variant="primary" type="submit">
