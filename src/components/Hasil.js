@@ -15,6 +15,7 @@ export default class ListCategories extends Component {
       keranjangDetail: false,
       jumlah: 0,
       keterangan: "",
+      totalHarga: 0,
     };
   }
 
@@ -24,6 +25,7 @@ export default class ListCategories extends Component {
       keranjangDetail: menuKeranjang,
       jumlah: menuKeranjang.jumlah,
       keterangan: menuKeranjang.keterangan,
+      totalHarga: menuKeranjang.total_harga,
     });
   };
 
@@ -36,6 +38,8 @@ export default class ListCategories extends Component {
   tambah = () => {
     this.setState({
       jumlah: this.state.jumlah + 1,
+      totalHarga:
+        this.state.keranjangDetail.product.harga * (this.state.jumlah + 1),
     });
   };
 
@@ -43,6 +47,8 @@ export default class ListCategories extends Component {
     if (this.state.jumlah !== 1) {
       this.setState({
         jumlah: this.state.jumlah - 1,
+        totalHarga:
+          this.state.keranjangDetail.product.harga * (this.state.jumlah - 1),
       });
     }
   };

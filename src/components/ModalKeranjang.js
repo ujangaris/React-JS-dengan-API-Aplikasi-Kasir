@@ -15,6 +15,7 @@ const ModalKeranjang = ({
   kurang,
   changeHandler,
   handleSubmit,
+  totalHarga,
 }) => {
   if (keranjangDetail) {
     return (
@@ -32,7 +33,7 @@ const ModalKeranjang = ({
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Total Harga :</Form.Label>
               <strong>
-                <p>Rp. {numberWithCommas(keranjangDetail.total_harga)}</p>
+                <p>Rp. {numberWithCommas(totalHarga)}</p>
               </strong>
             </Form.Group>
 
