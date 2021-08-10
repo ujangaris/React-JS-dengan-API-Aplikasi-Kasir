@@ -89,6 +89,26 @@ export default class ListCategories extends Component {
       });
   };
 
+  hapusPesanan = (id) => {
+    this.handleClose();
+
+    axios
+      .delete(API_URL + "keranjangs/" + id)
+      .then((res) => {
+        swal({
+          title: "Hapus Pesanan!",
+          text:
+            "Sukses Hapus Pesanan " + this.state.keranjangDetail.product.nama,
+          icon: "error",
+          button: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        console.log("Error ya: ", error);
+      });
+  };
+
   render() {
     const { keranjangs } = this.props;
     return (
@@ -132,6 +152,7 @@ export default class ListCategories extends Component {
               kurang={this.kurang}
               changeHandler={this.changeHandler}
               handleSubmit={this.handleSubmit}
+              hapusPesanan={this.hapusPesanan}
             />
           </ListGroup>
         )}

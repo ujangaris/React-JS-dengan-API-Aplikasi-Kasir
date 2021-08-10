@@ -16,6 +16,7 @@ const ModalKeranjang = ({
   changeHandler,
   handleSubmit,
   totalHarga,
+  hapusPesanan,
 }) => {
   if (keranjangDetail) {
     return (
@@ -79,7 +80,10 @@ const ModalKeranjang = ({
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="danger" onClick={handleClose}>
+          <Button
+            variant="danger"
+            onClick={() => hapusPesanan(keranjangDetail.id)}
+          >
             <FontAwesomeIcon icon={faTrash} /> Hapus Pesanan
           </Button>
         </Modal.Footer>

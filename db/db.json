@@ -185,24 +185,6 @@
   ],
   "keranjangs": [
     {
-      "jumlah": 2,
-      "total_harga": 28000,
-      "product": {
-        "id": 2,
-        "kode": "K-02",
-        "nama": "Nasi Goreng Telur",
-        "harga": 14000,
-        "is_ready": true,
-        "gambar": "nasi-goreng-telor.jpg",
-        "category": {
-          "id": 1,
-          "nama": "Makanan"
-        }
-      },
-      "keterangan": "Sedeng pedesnya",
-      "id": 1
-    },
-    {
       "jumlah": 1,
       "total_harga": 12000,
       "product": {
@@ -217,7 +199,41 @@
           "nama": "Makanan"
         }
       },
+      "id": 1
+    },
+    {
+      "jumlah": 1,
+      "total_harga": 14000,
+      "product": {
+        "id": 2,
+        "kode": "K-02",
+        "nama": "Nasi Goreng Telur",
+        "harga": 14000,
+        "is_ready": true,
+        "gambar": "nasi-goreng-telor.jpg",
+        "category": {
+          "id": 1,
+          "nama": "Makanan"
+        }
+      },
       "id": 2
+    },
+    {
+      "jumlah": 2,
+      "total_harga": 20000,
+      "product": {
+        "id": 6,
+        "kode": "K-06",
+        "nama": "Bakso",
+        "harga": 10000,
+        "is_ready": true,
+        "gambar": "bakso.jpg",
+        "category": {
+          "id": 1,
+          "nama": "Makanan"
+        }
+      },
+      "id": 3
     }
   ],
   "pesanans": [
