@@ -4,6 +4,9 @@ import { Badge, Col, ListGroup, Row } from "react-bootstrap";
 import { numberWithCommas } from "./../utils/utils";
 import ModalKeranjang from "./ModalKeranjang";
 import TotalBayar from "./TotalBayar";
+import { API_URL } from "../utils/constants";
+import axios from "axios";
+import swal from "sweetalert";
 
 export default class ListCategories extends Component {
   //rconst
@@ -61,7 +64,29 @@ export default class ListCategories extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Hai", this.state.keterangan);
+    this.handleClose();
+    // console.log("Hai", this.state.keterangan);
+    const data = {
+      jumlah: this.state.jumlah,
+      total_harga: this.state.totalHarga,
+      product: this.state.keranjangDetail.product,
+      keterangan: this.state.keterangan,
+    };
+
+    axios
+      .put(API_URL + "keranjangs/" + this.state.keranjangDetail.id, data)
+      .then((res) => {
+        swal({
+          title: "Update Pesanan!",
+          text: "Sukses Update Pesanan " + data.product.nama,
+          icon: "success",
+          button: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        console.log("Error ya: ", error);
+      });
   };
 
   render() {
