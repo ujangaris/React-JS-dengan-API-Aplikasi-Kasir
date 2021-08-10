@@ -20,6 +20,9 @@ body {
   .hasil {
     height: 650px;
   }
+  .menu {
+    height: 800px;
+  }
 }
 .overflow-auto::-webkit-scrollbar {
   display: none;

@@ -23,29 +23,58 @@ export default class TotalBayar extends Component {
       return result + item.total_harga;
     }, 0);
     return (
-      <div className="fixed-bottom">
-        <Row>
-          <Col md={{ span: 3, offset: 9 }} className="px-4">
-            <h4>
-              Total Harga :{" "}
-              <strong className="float-right">
-                Rp. {numberWithCommas(totalBayar)}
-              </strong>
-            </h4>
-            <div className="d-grid">
-              <Button
-                variant="primary"
-                block
-                className="mb-2 mt-4 mr-2"
-                size="lg"
-                onClick={() => this.submitTotalBayar(totalBayar)}
-              >
-                <FontAwesomeIcon icon={faShoppingCart} /> <strong>BAYAR</strong>
-              </Button>
-            </div>
-          </Col>
-        </Row>
-      </div>
+      <>
+        {/* Web */}
+        <div className="fixed-bottom d-none d-md-block">
+          <Row>
+            <Col md={{ span: 3, offset: 9 }} className="px-4">
+              <h4>
+                Total Harga :{" "}
+                <strong className="float-right">
+                  Rp. {numberWithCommas(totalBayar)}
+                </strong>
+              </h4>
+              <div className="d-grid">
+                <Button
+                  variant="primary"
+                  block
+                  className="mb-2 mt-4 mr-2"
+                  size="lg"
+                  onClick={() => this.submitTotalBayar(totalBayar)}
+                >
+                  <FontAwesomeIcon icon={faShoppingCart} />{" "}
+                  <strong>BAYAR</strong>
+                </Button>
+              </div>
+            </Col>
+          </Row>
+        </div>
+        {/* Mobile */}
+        <div className="d-sm-block d-md-none">
+          <Row>
+            <Col md={{ span: 3, offset: 9 }} className="px-4">
+              <h4>
+                Total Harga :{" "}
+                <strong className="float-right">
+                  Rp. {numberWithCommas(totalBayar)}
+                </strong>
+              </h4>
+              <div className="d-grid">
+                <Button
+                  variant="primary"
+                  block
+                  className="mb-2 mt-4 mr-2"
+                  size="lg"
+                  onClick={() => this.submitTotalBayar(totalBayar)}
+                >
+                  <FontAwesomeIcon icon={faShoppingCart} />{" "}
+                  <strong>BAYAR</strong>
+                </Button>
+              </div>
+            </Col>
+          </Row>
+        </div>
+      </>
     );
   }
 }
