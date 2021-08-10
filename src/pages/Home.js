@@ -143,7 +143,7 @@ export default class Home extends Component {
               changeCategory={this.changeCategory}
               categoriYangDipilih={categoriYangDipilih}
             />
-            <Col>
+            <Col className="mt-3">
               <h4>
                 <strong>Daftar Produk</strong>
               </h4>
